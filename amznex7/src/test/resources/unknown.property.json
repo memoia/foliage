@@ -1,0 +1,43 @@
+{
+  "node": {
+    "value": 5,
+    "left": {
+      "node": {
+        "value": 3,
+        "left": {
+          "node": {
+            "value": 9,
+            "left": null,
+            "right": null
+          }
+        },
+        "right": null
+      }
+    },
+    "right": {
+      "node": {
+        "value": 1,
+        "left": {
+          "node": {
+            "value": 4,
+            "left": {
+              "node": {
+                "value": 2,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": null
+          }
+        },
+        "right": {
+          "node": {
+            "value": 5,
+            "left": null,
+            "right": null
+          }
+        }
+      }
+    }
+  }
+}

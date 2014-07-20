@@ -1,3 +1,5 @@
 *.sw[po]
 *.py[co]
 /proto/env
+/env
+/amznex7/target
