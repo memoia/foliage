@@ -109,11 +109,19 @@ Some ideas:
 
 1. My initial thought here is to traverse the tree (in any order),
    maintaining a hash with an integer key serving as the "level",
-   and the value being a dynamic list. Then, as the tree is
+   and the value being a list. Then, as the tree is
    walked, the left and right values could be "merged" by level.
-2. There are probably better ways to do this. A tree is a kind of graph,
-   and graph searching, as discussed in the source (p. 532 onwards) can
-   be accomplished using both breadth-first and depth-first techniques.
-   A breadth-first traversal strategy might be more appropriate for this
-   problem, since we want elements organized by level.
+   There's at least one problem with this approach, I think.
+   We would be iterating through the data set twice: once to convert
+   to a table, and again to print it out. It might not matter
+   much, but maybe one day we'll run into a massive tree and reconsider.
+2. Maybe there's a way that doesn't require running through the data
+   twice. A tree is a kind of graph, and graph searching, as discussed
+   in the source (p. 532 onwards) can be accomplished using both
+   breadth-first and depth-first techniques. A breadth-first traversal
+   strategy might be more appropriate for this problem, since we want
+   elements organized by level. We could use a list as a stack or a
+   queue to sequentially add each pair of child nodes and then pop
+   and print them, but that won't satisfy the formatting requirement.
 
+For now, I'll assume less-than-massive trees.
