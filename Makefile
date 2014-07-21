@@ -6,12 +6,12 @@ ENV := $(CURDIR)/env
 MVN := JAVA_HOME=$(JAVA_HOME) MAVEN_OPTS=$(JAVA_OPTS) $(ENV)/bin/mvn -Dmaven.repo.local=$(ENV)/maven
 
 
-test: $(ENV)/bin/mvn
-	cd $(PROJECT) && $(MVN) clean cobertura:cobertura
-
-
 run: test
 	cd $(PROJECT) && $(MVN) compile exec:java
+
+
+test: $(ENV)/bin/mvn
+	cd $(PROJECT) && $(MVN) clean cobertura:cobertura
 
 
 $(ENV):

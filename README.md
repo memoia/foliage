@@ -22,8 +22,8 @@ for each question in exercise-7.pdf.
 Notes
 -----
 
-There are no requirements for tree storage. Trees
-will be read from JSON structures on disk, for
+There are no noted requirements for tree storage or generation.
+Trees will be read from JSON structures on disk, for
 ease of modification, sampling different scenarios, etc.
 
 Common requirements:
