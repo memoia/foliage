@@ -1,0 +1,17 @@
+{
+  "value": 9,
+  "left": {
+    "value": 5,
+    "left": {
+      "value": 3,
+      "left": null,
+      "right": null
+    },
+    "right": {
+      "value": 6,
+      "left": null,
+      "right": null
+    }
+  },
+  "right": null
+}

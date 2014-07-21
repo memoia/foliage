@@ -3,8 +3,14 @@ package com.memoia.amznex7;
 import org.apache.commons.io.input.AutoCloseInputStream;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import org.apache.commons.lang.StringUtils;
+
 
 public class Node implements Comparable<Node> {
+    private static final Logger LOG = LogManager.getLogger(Node.class);
     private static final ObjectMapper mapper = new ObjectMapper();
 
     public int value;
@@ -70,10 +76,18 @@ public class Node implements Comparable<Node> {
     /**
      * Generate a node tree from a JSON fixture file.
      */
-    public static Node loadFixture(String path) throws NullPointerException, java.io.IOException {
-        return mapper.readValue(
-            new AutoCloseInputStream(Node.class.getResourceAsStream(path)),
-            Node.class);
+    public static Node loadFixture(String path) {
+        if (!StringUtils.startsWith(path, "/")) {
+            path = '/' + path;
+        }
+        try {
+            return mapper.readValue(
+                new AutoCloseInputStream(Node.class.getResourceAsStream(path)),
+                Node.class);
+        } catch (Exception err) {
+            LOG.error("Cannot load fixture", err);
+            return null;
+        }
     }
 
 }

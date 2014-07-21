@@ -11,7 +11,7 @@
   <url>http://memoia.com</url>
 
   <properties>
-    <amznex7.mainclass>com.memoia.amznex7.Something</amznex7.mainclass>
+    <amznex7.mainclass>com.memoia.amznex7.Main</amznex7.mainclass>
     <amznex7.resources>${basedir}/src/main/resources</amznex7.resources>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -66,12 +66,6 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-core</artifactId>
-      <version>1.9.5</version>
-      <scope>test</scope>
-    </dependency>
   </dependencies>
 
   <build>
@@ -79,7 +73,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>cobertura-maven-plugin</artifactId>
-        <version>2.6</version>
+        <version>2.5.2</version>
         <configuration>
           <formats>
             <format>html</format>
@@ -95,6 +89,7 @@
           <instrumentation>
             <excludes>
               <exclude>com/memoia/**/*Test.class</exclude>
+              <exclude>com/memoia/**/Main.class</exclude>
             </excludes>
           </instrumentation>
         </configuration>
@@ -128,6 +123,7 @@
         <filtering>true</filtering>
         <includes>
           <include>**/*.json</include>
+          <include>**/*.xml</include>
         </includes>
       </resource>
     </resources>

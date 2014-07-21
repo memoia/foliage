@@ -97,14 +97,20 @@ public class NodeTest {
     }
 
     @Test
+    public void loadFixtureWithoutLeadingSlash() throws Exception {
+        n3 = Node.loadFixture("simple.json");
+        assertEquals(new Node(9, null, null), n3);
+    }
+
+    @Test
     public void loadFixtureMissingFile() throws Exception {
-        exception.expect(NullPointerException.class);
         n3 = Node.loadFixture("/does.not.exist.json");
+        assertNull(n3);
     }
 
     @Test
     public void loadFixtureBadFormat() throws Exception {
-        exception.expect(com.fasterxml.jackson.core.JsonParseException.class);
         n3 = Node.loadFixture("/bad.format.json");
+        assertNull(n3);
     }
 }
