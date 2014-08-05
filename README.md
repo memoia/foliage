@@ -1,5 +1,5 @@
-Amazon Code Exercise Set 7: Binary Search Trees
-===============================================
+Code Exercise Set 7: Binary Search Trees
+========================================
 
 Full description of requirements in exercise-7.pdf.
 
